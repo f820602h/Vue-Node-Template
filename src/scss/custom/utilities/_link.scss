@@ -1,0 +1,44 @@
+a {
+  color: $blue;
+  outline: none;
+  text-decoration: none;
+  &:hover {
+    color: $blue-light
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+%link {
+  display: inline-block;
+  align-items: center;
+  font-size: 14px;
+  line-height: 20px;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.link-primary {
+  @extend %link;
+  color: $primary;
+  font-weight: bold;
+  &:hover {
+    color: $primary-light;
+  }
+}
+.link-gray {
+  @extend %link;
+  color: $gray-600;
+  font-weight: bold;
+  &:hover {
+    color: $primary-light;
+  }
+}
+.link-blue {
+  @extend %link;
+  color: $blue;
+  &:hover {
+    color: $blue-light;
+  }
+}

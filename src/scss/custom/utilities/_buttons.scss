@@ -1,0 +1,89 @@
+.btn {
+  font-weight: bold;
+  cursor: pointer;
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.btn-primary {
+  @include button-variant($primary, $primary, $primary-light, $primary-light);
+  transition: 0.2s;
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+
+  &:disabled, &.disabled {
+    opacity: 1;
+    border: 1px solid $gray-600;
+    background: $gray-600;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    border-color: $primary-light;
+    background: $primary-light;
+  }
+}
+
+.btn-outline-primary {
+  @include button-outline-variant($primary, $primary, $white, $primary-light);
+  transition: 0.2s;
+  font-weight: bold;
+
+  &:hover {
+    color: $primary-light;
+    box-shadow: 0 0 4px 0 $primary-light;
+  }
+
+  &:disabled, &.disabled {
+    opacity: 1;
+    border: 1px solid $gray-600;
+    color: $gray-600;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: $primary-light;
+  }
+}
+
+.btn-outline-white {
+  @include button-outline-variant($white, $white, $transparent, $primary-lighter);
+  border-width: 2px;
+  transition: 0.2s;
+
+  &:hover {
+    color: $white;
+    text-shadow: 0 0 4px $primary-lighter;
+    box-shadow: 0 0 4px 0 $primary-lighter;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: $white;
+  }
+}
+
+.btn-outline-fill {
+  @include button-outline-variant($primary, $primary, $primary-lighter, $primary-light);
+  background: $primary-lighter;
+  transition: 0.2s;
+
+  &:hover {
+    color: $primary-light;
+    box-shadow: 0 0 4px 0 $primary-light;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: $primary-light;
+  }
+}
